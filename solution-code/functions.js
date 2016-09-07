@@ -7,6 +7,11 @@ function maxOfTwoNumbers(x,y) {
   }
 }
 
+// Question 1 Alternative Answer
+function maxOfTwoNumbers(num1, num2) {
+  num1 >= num2 ? return num1 : return num2;
+}
+
 // Question 2
 function maxOfThree(x,y,z) {
   if (x > y && x > z) {
@@ -22,13 +27,31 @@ function maxOfThree(x,y,z) {
   }
 }
 
+// Question 2 Alternative Answer
+function maxOfThree(num1, num2, num3) {
+  array = [num1, num2, num3]
+  return array.sort(function(a, b){return b-a})[0]
+}
+
 // Question 3
 function isCharacterAVowel(c) {
   var vowels = ['a','e','i','o','u'];
   if (vowels.indexOf(c) !== -1) {
     return true;
-  } 
+  }
   return false;
+}
+
+// Question 3 Alternative Answer
+function isCharacterAVowel(char) {
+  var isVowel = false;
+  var vowels = ['a', 'e', 'i', 'o', 'u'];
+  vowels.forEach(function(vowel){
+    if (char === vowel){
+      isVowel = true
+    }
+  });
+  return isVowel
 }
 
 // Question 4
@@ -53,7 +76,7 @@ function multiplyArray(arr) {
 
 // Question 5
 var numberOfArguments = function(){
-  return args.length
+  return arguments.length
 }
 
 
@@ -71,7 +94,7 @@ var reverseString = function (str){
 
 // Question 6 alternative answer
 
-reverseString = function(){ 
+reverseString = function(){
   return this.split('').reverse().join('');
 };
 
@@ -100,7 +123,7 @@ function filterLongWords (arr,num) {
 
 
 // Bonus 1
-String.prototype.reverse = function(){ 
+String.prototype.reverse = function(){
   return this.split('').reverse().join('');
 };
 
